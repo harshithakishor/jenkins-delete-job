@@ -1,4 +1,10 @@
+import jenkins.model.*
 def hi() {
-    println("Hello World!")
+    def matchedJobs = Jenkins.instance.items.findAll { job ->
+    job.name =~ /test/
+}
+matchedJobs.each { job ->
+    job.delete()
+}
 }
 return this
