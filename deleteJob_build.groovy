@@ -31,7 +31,7 @@ for (job in Jenkins.instance.items) {
 	// if("${duration.hours}">"6") {
        //   println "deleting  - ${build} , it is ${duration.hours} hours old"
          // build.delete()
-        }
+       // }
       }
     }
   }
