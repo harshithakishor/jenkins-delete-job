@@ -1,0 +1,7 @@
+node {
+	stage "git clone groovy"
+		git url: 'https://github.com/harshithakishor/jenkins-delete-job.git', branch: 'main'
+	stage "delete Job"
+		def deleteModule = load "deleteJob_build.groovy"
+		deleteModule.deleteJob(params.deleteJobRegex)
+}
