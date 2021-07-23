@@ -27,9 +27,10 @@ for (job in Jenkins.instance.items) {
 	  use (groovy.time.TimeCategory) {
 		def current_date = new Date()
 		def duration = current_date - build_time
-	if("${duration.hours}">"6") {
+		  println duration
+	// if("${duration.hours}">"6") {
        //   println "deleting  - ${build} , it is ${duration.hours} hours old"
-          build.delete()
+         // build.delete()
         }
       }
     }
