@@ -1,5 +1,5 @@
 node {
     def rootDir = pwd()
-    def exampleModule = load "deleteJob.Groovy "
+    def exampleModule = load "deleteJob.groovy "
     exampleModule.hi()
 }
