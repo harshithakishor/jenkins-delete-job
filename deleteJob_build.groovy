@@ -12,7 +12,7 @@ matchedJobs.each { job ->
 }
 }
 
-
+@NonCPS
 def deleteBuild() {
 minimum_builds = 3
 
