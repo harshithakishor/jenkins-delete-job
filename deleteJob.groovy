@@ -1,7 +1,8 @@
 import jenkins.model.*
-def hi() {
+def hi(deleteRegex) {
+    def deleteJobPat = deleteRegex
     def matchedJobs = Jenkins.instance.items.findAll { job ->
-    job.name =~ /test/
+        job.name =~ /${deleteJobPat}/
 }
 matchedJobs.each { job ->
     job.delete()
