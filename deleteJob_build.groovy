@@ -25,7 +25,7 @@ for (job in Jenkins.instance.items) {
   for (build in job.builds) {
 	 
     if (!recent.contains(build)) {
-	    println older_days
+	    
 	  def build_time = build.getTime()
 	  use (groovy.time.TimeCategory) {
 		def current_date = new Date()
