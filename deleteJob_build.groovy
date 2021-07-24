@@ -16,11 +16,12 @@ matchedJobs.each { job ->
 def deleteBuild() {
 minimum_builds = 3
 
+	
 for (job in Jenkins.instance.items) {
   println job.name
 
   def recent = job.builds.limit(minimum_builds)
-  
+  try { 
   for (build in job.builds) {
     if (!recent.contains(build)) {
 	    println older_days
@@ -35,6 +36,9 @@ for (job in Jenkins.instance.items) {
       }
     }
   }
+  }catch(Exception ex) {
+                println ' Ignoring exception ' + ex
+            }
 }
 
 }
