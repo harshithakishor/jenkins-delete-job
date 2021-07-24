@@ -21,8 +21,9 @@ for (job in Jenkins.instance.items) {
   println job.name
 
   def recent = job.builds.limit(minimum_builds)
-  try { 
+  
   for (build in job.builds) {
+	  try { 
     if (!recent.contains(build)) {
 	    println older_days
 	  def build_time = build.getTime()
@@ -35,10 +36,11 @@ for (job in Jenkins.instance.items) {
        }
       }
     }
-  }
-  }catch(Exception ex) {
+		  }catch(Exception ex) {
                 println ' Ignoring exception ' + ex
             }
+  }
+  
 }
 
 }
