@@ -3,5 +3,5 @@ node {
 		git url: 'https://github.com/harshithakishor/jenkins-delete-job.git', branch: 'main'
 	stage "delete build"
 		def deleteModule = load "deleteJob_build.groovy"
-		deleteModule.deleteBuild(params.older_days)
+		deleteModule.deleteBuild()
 }
