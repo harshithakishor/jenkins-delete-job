@@ -13,7 +13,7 @@ matchedJobs.each { job ->
 }
 
 @NonCPS
-def deleteBuild() {
+def deleteBuild(older_days) {
 minimum_builds = 3
 
 for (job in Jenkins.instance.items) {
@@ -27,7 +27,7 @@ for (job in Jenkins.instance.items) {
 	  use (groovy.time.TimeCategory) {
 		def current_date = new Date()
 		def duration = current_date - build_time
-	if(duration.days>3) {
+	if(duration.days>older_days) {
         	println "deleting  - ${build} , it is ${duration.days} days old"
          build.delete()
        }
