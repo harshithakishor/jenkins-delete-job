@@ -31,7 +31,7 @@ for (job in Jenkins.instance.items) {
 		def current_date = new Date()
 		def duration = current_date - build_time
 	if(duration.hours>1) {
-        	println "deleting  - ${build} , it is ${duration.hours} days old"
+        	println "deleting  - ${build} , it is ${duration.hours} hours old"
          build.delete()
        }
       }
